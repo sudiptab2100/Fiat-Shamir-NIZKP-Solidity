@@ -21,4 +21,13 @@ contract CounterTest is Test {
         counter.setNumber(x);
         assertEq(counter.number(), x);
     }
+
+    function test_ModExp() public {
+        uint256 b = 2;
+        uint256 e = 3;
+        uint256 m = 5;
+        uint256 expected = 3;
+        uint256 result = counter.modExp(b, e, m);
+        assertEq(result, expected);
+    }
 }
