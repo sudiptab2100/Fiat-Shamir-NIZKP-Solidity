@@ -38,4 +38,8 @@ contract Counter {
             result := mload(value)
         }
     }
+
+    function mudMult(uint256 x, uint256 y, uint256 k) public pure returns (uint256 result) {
+        result = mulmod(x, y, k);
+    }
 }

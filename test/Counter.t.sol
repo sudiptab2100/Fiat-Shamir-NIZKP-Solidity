@@ -31,4 +31,14 @@ contract CounterTest is Test {
         uint256 result = counter.modExp(b, e, m);
         assertEq(result, expected);
     }
+    
+    function test_MudMult() public {
+        // Verified from online calculator: https://www.dcode.fr/modular-exponentiation
+        uint256 x = 81393320028874372971506050608887649831479533935234032636905594932227643625162;
+        uint256 y = 35444162570359240694477526306393672083901136362216370936455275143503774375818;
+        uint256 k = 34033936381220136781619490036994710610930251007014272201359535359609752889937;
+        uint256 expected = 15883914155651364811892805982070488447113087144864895402817182354353227961462; // mulmod(x, y, k); // (x * y) % k;
+        uint256 result = counter.mudMult(x, y, k);
+        assertEq(result, expected);
+    }
 }
