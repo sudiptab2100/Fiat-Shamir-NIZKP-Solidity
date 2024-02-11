@@ -34,4 +34,8 @@ contract Counter {
     function mudMult(uint256 x, uint256 y, uint256 k) public pure returns (uint256 result) {
         result = mulmod(x, y, k);
     }
+
+    function genHash(uint256 g, uint256 y, uint256 t) public pure returns (uint o) {
+        o = uint256(sha256(abi.encodePacked(g, y, t)));
+    }
 }
