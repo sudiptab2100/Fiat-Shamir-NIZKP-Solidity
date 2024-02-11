@@ -23,10 +23,11 @@ contract CounterTest is Test {
     }
 
     function test_ModExp() public {
-        uint256 b = 2;
-        uint256 e = 3;
-        uint256 m = 5;
-        uint256 expected = 3;
+        // Verified from online calculator: https://www.dcode.fr/modular-exponentiation
+        uint256 b = 81393320028874372971506050608887649831479533935234032636905594932227643625162;
+        uint256 e = 35444162570359240694477526306393672083901136362216370936455275143503774375818;
+        uint256 m = 34033936381220136781619490036994710610930251007014272201359535359609752889937;
+        uint256 expected = 8904919252717246298510997806261208748307791719112493033822644872388079328686; // (b ** e) % m;
         uint256 result = counter.modExp(b, e, m);
         assertEq(result, expected);
     }
